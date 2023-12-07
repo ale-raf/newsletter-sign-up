@@ -5,6 +5,7 @@ const errorElement = document.querySelector("p.error");
 const mainContainer = document.querySelector("div.container");
 const successContainer = document.querySelector("div.container.success");
 const emailAddress = document.querySelector("span.email-address");
+let isEmpty = "";
 
 const displaySuccess = () => {
   mainContainer.classList.add("hide");
@@ -31,11 +32,10 @@ const checkEmailValidity = (e) => {
 const dismissSuccessMsg = () => {
   mainContainer.classList.remove("hide");
   successContainer.classList.add("hide");
-  emailInput.value = "";
+  emailInput.value = isEmpty;
 };
 
 const checkInputValue = () => {
-  let isEmpty = "";
   if (emailInput.value !== isEmpty) {
     errorElement.classList.add("hide");
     emailInput.classList.remove("invalid");
